@@ -1,0 +1,131 @@
+%!TEX TS-program = xelatex
+\documentclass[hidelinks]{friggeri-cv}
+\addbibresource{bibliography.bib}
+
+\usepackage{ragged2e}
+\usepackage{tikz,marvosym}
+
+\newcommand{\grade}[1]{%
+    \begin{tikzpicture}
+    \clip (0.25em-.3em,-.3em) rectangle (5em +.5em ,.3em);
+    \begin{scope}
+    \clip (1em-.3em,-.3em) rectangle (#1em +.5em ,.3em);
+    \foreach \x in {1,2,...,5}{
+        \path[fill=red] (\x em,0) circle (.25em);
+    }
+    \end{scope}
+    \foreach \x in {1,2,...,5}{
+        \draw (\x em,0) circle (.25em);
+    }
+    \end{tikzpicture}%
+}
+
+\newcommand{\Ort}{Musterstadt} % insert your current location
+\makeatletter
+\newcommand{\Unterschrift}{Max Muster}
+\makeatother
+
+\begin{document}
+    \header{Max }{Muster}
+    {\large Musterstr. 1, 01234 Musterstadt \ $\bullet$ \ \Letter\hspace{0.1em}\href{mailto:mustermax@maxmuster.mail}{mustermax@maxmuster.mail} \ $\bullet$ \ \Mobilefone\hspace{0.1em}(+49) 0123 444 \ $\bullet$ \ \Telefon\hspace{0.1em}(+49) 0123 444}
+    
+    % In the aside, each new line forces a line break
+    \begin{aside}
+%        \section{Info}
+%        geb. am 01. Jan 1970 in Musterstadt
+%        Führerschein A, B, C
+%        ~
+        \section{Sprachen}
+            \begin{tabular}{ll}
+                Deutsch\quad & \grade{0}  \\
+                Englisch\quad & \grade{0.0}  \\
+                Französisch\quad & \grade{0.0}  \\
+            \end{tabular}
+        \section{Programmier-\linebreak sprachen}
+            \begin{tabular}{ll}
+                Java\quad & \grade{0.0}  \\
+                C\#\quad & \grade{0.0}\\
+            \end{tabular}
+        { %\color{red} $\varheartsuit$} JavaScript
+        \small \LaTeX{}, HTML5, CSS3}
+        \section{EDV Kenntnisse}
+        {sehr gute Kenntnisse im Umgang mit Lotus Notes, 
+        Works}
+        ~
+        {\emph{\textbf{Plattformen}}}
+        {{Windows 3.1}}
+    \end{aside}
+
+    \vspace*{11ex}
+    \section{Info}
+    geb. am 01. Jan 1970 in Musterstadt
+    Führerschein A, B, C
+%    \section{Interessen}
+%    
+%    complex networks, social networks, community detection, community structure,
+%    overlapping communities, information diffusion, viral marketing, social
+%    inference, recommendation, data mining
+%    \vspace*{11ex}
+
+    \vspace*{1ex}
+    \section{Ausbildung}
+    
+    \begin{entrylist}
+        \entry
+        {10/2008 -- 08/2013}
+        {Studium der Musterung, {\normalfont Hochschule Musterstadt}}
+        {Hochschule Musterstadt}
+        {Vertiefungsrichtung: Muster
+         %-----------------
+         % subsection thesis
+         \vspace*{1ex}\\
+         \normalfont Hausarbeit\\
+         \emph{"Musterttitel mit \\ Zeilenumbruch"}, 
+         \\\textnormal\small{Abteilung Musterung, 
+         \\\textsc\small{\href{https://www.maxmustermann.de/}{Max Mustert}}}
+         \vspace*{0.2ex}\\
+         %-----------------
+         }
+         \entry
+        {01/1988 -- 12/1990}
+        {Military service, {\normalfont Musterstadt, 1./Musterkompanie}}
+        {Musterstadt, 1./Musterkompanie}
+        {}
+    \end{entrylist}
+    %----------------------------------------------------------------------------------------
+    %	WORK EXPERIENCE SECTION
+    %----------------------------------------------------------------------------------------
+    %Section
+    \vspace*{-3ex}
+    \section{Werdegang}
+    \begin{entrylist}
+        \entry
+        {01/1980 -- 12/1988}
+        {Gemustert im Elternhaus, {Heinz \& Maria Mustermann, {\normalfont Musterstadt}}}
+        {Musterstadt}
+        {\emph{\small
+                    \begin{itemize}
+                        \item tägliche Spüldienste und sonstige Unterstützung im Haushalt
+                    \end{itemize}
+                    }}
+    \end{entrylist}
+    %----------------------------------------------------------------------------------------
+    
+    %----------------------------------------------------------------------------------------
+    %	WORK EXPERIENCE SECTION
+    %----------------------------------------------------------------------------------------
+    %Section
+    \vspace*{-3ex}
+    \section{Weitere Tätigkeiten}
+    \begin{entrylist}
+        \entry
+        {01/1988 -- 12/1990}
+        {Betreuung der Rekruten}
+        {Musterstadt}
+        {}
+    \end{entrylist}
+    \vspace*{1.75ex}
+    \raggedright
+    \textnormal\Ort, \textnormal\today\\[0.0ex]
+    \textnormal\Unterschrift
+\end{document}
